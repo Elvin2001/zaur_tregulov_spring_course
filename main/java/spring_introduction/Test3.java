@@ -14,7 +14,10 @@ public class Test3 {
         // Получение бина из Application Context и внедрение зависимости(Dependency Injection) через constructor
         Person person = context.getBean("myPerson", Person.class);
 
-        person.callYourPet();
+        // Вывод информации о бине person
+        System.out.println("person.getSurname() = " + person.getSurname());
+        System.out.println("person.getName() = " + person.getName());
+        System.out.println("person.getAge() = " + person.getAge());
         context.close();
     }
 }
