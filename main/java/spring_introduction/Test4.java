@@ -24,11 +24,12 @@ public class Test4 {
 
         System.out.println("Переменные ссылаются на один и тот же объект? " + (myDog == yourDog));
 
-        myDog.setName("Belka");
-        yourDog.setName("Strelka");
+//        myDog.setName("Belka");
+//        yourDog.setName("Strelka");
+//
+//        System.out.println(myDog.getName());
+//        System.out.println(yourDog.getName());
 
-        System.out.println(myDog.getName());
-        System.out.println(yourDog.getName());
-
+        context.close();
     }
 }
