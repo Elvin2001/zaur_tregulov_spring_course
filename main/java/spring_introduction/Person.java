@@ -11,17 +11,17 @@ public class Person {
     private String name;
     private int age;
 
-    @Autowired
-    public Person(Pet pet) {
-        System.out.println("Person bean is created");
-        this.pet = pet;
-    }
-
-    //    public Person() {
+//    @Autowired
+//    public Person(Pet pet) {
 //        System.out.println("Person bean is created");
+//        this.pet = pet;
 //    }
 
-//    @Autowired
+        public Person() {
+        System.out.println("Person bean is created");
+    }
+
+    @Autowired
     public void setPet(Pet pet) {
         System.out.println("Person: set pet");
         this.pet = pet;
