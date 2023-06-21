@@ -9,17 +9,16 @@ import org.springframework.stereotype.Component;
 public class Person {
     private Pet pet;
 
-//    @Value("${person.surname}")
+    //    @Value("${person.surname}")
     private String surname;
 
-//    @Value("${person.name}")
+    //    @Value("${person.name}")
     private String name;
 
-//    @Value("${person.age}")
+    //    @Value("${person.age}")
     private int age;
 
-    @Autowired
-    public Person(@Qualifier("myDog") Pet pet) {
+    public Person(Pet pet) {
         System.out.println("Person bean is created");
         this.pet = pet;
     }

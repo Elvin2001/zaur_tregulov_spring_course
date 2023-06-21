@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component("myDog")
+//@Component("myDog")
 @Scope("prototype")
 public class Dog implements Pet {
 
