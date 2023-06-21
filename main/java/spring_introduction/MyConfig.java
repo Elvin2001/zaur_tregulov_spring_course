@@ -2,9 +2,10 @@ package spring_introduction;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:myApp.properties")
 //@ComponentScan("spring_introduction")
 public class MyConfig {
     @Bean
@@ -12,6 +13,7 @@ public class MyConfig {
         System.out.println("Cat bean is created!");
         return new Cat();
     }
+
     @Bean
     public Person personBean() {
         System.out.println("Person bean is created!");
