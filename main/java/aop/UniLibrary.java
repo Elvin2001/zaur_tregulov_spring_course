@@ -19,6 +19,14 @@ public class UniLibrary {
     }
 
     public void returnMagazine() {
-        System.out.println("Мы возвращаем журнал из UniLibrary");
+        System.out.println("Мы возвращаем журнал в UniLibrary");
+    }
+
+    public void addBook() {
+        System.out.println("Мы добавляем книгу из UniLibrary");
+    }
+
+    public void addMagazine() {
+        System.out.println("Мы добавляем журнал в UniLibrary");
     }
 }
