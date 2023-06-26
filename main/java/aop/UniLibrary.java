@@ -4,16 +4,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UniLibrary {
-//    @Override
+    //    @Override
     public void getBook() {
         System.out.println("Мы берём книгу из UniLibrary");
         System.out.println("------------------------------------------------");
     }
 
-//    @Override
-    public void returnBook() {
-        System.out.println("Мы возвращаем книгу из UniLibrary");
-        System.out.println("------------------------------------------------");
+    //    @Override
+    public String returnBook() {
+        System.out.println("Мы возвращаем книгу в UniLibrary");
+        return "Война и мир";
     }
 
     public void getMagazine() {
