@@ -2,10 +2,7 @@ package aop.aspects;
 
 import aop.Student;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
@@ -36,11 +33,17 @@ public class UniversityLoggingAspect {
 //        System.out.println("afterGetStudentsLoggingAdvice: логируем получение " +
 //                "списка студентов после работы метода getStudents()");
 //    }
-    @AfterThrowing(pointcut = "execution(* getStudents())",
-            throwing = "exception")
-    public void afterThrowingStudentsAdvice(JoinPoint joinPoint, Throwable exception) {
-        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        System.out.println("afterGetStudentsAdvice: method = " + methodSignature.getName() +
-                " выбросил исключение " + exception.getMessage());
+//    @AfterThrowing(pointcut = "execution(* getStudents())",
+//            throwing = "exception")
+//    public void afterThrowingStudentsAdvice(JoinPoint joinPoint, Throwable exception) {
+//        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+//        System.out.println("afterGetStudentsAdvice: method = " + methodSignature.getName() +
+//                " выбросил исключение " + exception.getMessage());
+//    }
+
+    @After("execution(* getStudents())")
+    public void afterGetStudentsLoggingAdvice() {
+        System.out.println("afterGetStudentsLoggingAdvice: логируем нормальное " +
+                "окончание работы метода или выброс исключения");
     }
 }
