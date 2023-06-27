@@ -30,4 +30,5 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
+
 }
