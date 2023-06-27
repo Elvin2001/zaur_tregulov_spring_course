@@ -1,10 +1,7 @@
 package hibernate_test.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "employees")
@@ -12,12 +9,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 public class Employee {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name = "name")
     private String name;
 
@@ -29,6 +28,4 @@ public class Employee {
 
     @Column(name = "salary")
     private int salary;
-
-
 }
