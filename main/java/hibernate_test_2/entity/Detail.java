@@ -7,7 +7,6 @@ import lombok.*;
 @Table(name = "details")
 @Getter
 @Setter
-@ToString
 public class Detail {
 
     @Id
@@ -24,6 +23,10 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
+    @OneToOne(mappedBy = "empDetail",
+            cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Employee employee;
+
     public Detail() {
     }
 
@@ -31,5 +34,16 @@ public class Detail {
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "id=" + id +
+                ", city='" + city + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", employee=" + employee +
+                '}';
     }
 }

@@ -7,7 +7,6 @@ import lombok.*;
 @Table(name = "employees")
 @Getter
 @Setter
-@ToString
 public class Employee {
 
     @Id
@@ -39,5 +38,17 @@ public class Employee {
         this.surname = surname;
         this.department = department;
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                ", empDetail=" + empDetail +
+                '}';
     }
 }
