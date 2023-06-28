@@ -5,8 +5,6 @@ import lombok.*;
 
 @Entity
 @Table(name = "employees")
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -32,4 +30,14 @@ public class Employee {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "details_id")
     private Detail empDetail;
+
+    public Employee() {
+    }
+
+    public Employee(String name, String surname, String department, int salary) {
+        this.name = name;
+        this.surname = surname;
+        this.department = department;
+        this.salary = salary;
+    }
 }

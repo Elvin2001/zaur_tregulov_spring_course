@@ -5,8 +5,6 @@ import lombok.*;
 
 @Entity
 @Table(name = "details")
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -25,4 +23,13 @@ public class Detail {
 
     @Column(name = "email")
     private String email;
+
+    public Detail() {
+    }
+
+    public Detail(String city, String phoneNumber, String email) {
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
 }
