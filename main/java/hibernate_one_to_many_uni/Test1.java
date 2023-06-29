@@ -1,5 +1,6 @@
 package hibernate_one_to_many_uni;
 
+
 import hibernate_one_to_many_uni.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,7 +20,7 @@ public class Test1 {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Department department = session.get(Department.class, 1);
+            Department department = session.get(Department.class, 2);
             session.remove(department);
 
             session.getTransaction().commit();
