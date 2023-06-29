@@ -35,12 +35,18 @@ public class Test {
 //            System.out.println("Done!!!") ;
 
             session = factory.getCurrentSession();
+//            Section section = new Section("Dancing");
+//            Child child1 = new Child("Masha", 12);
+//            Child child2 = new Child("Alena", 13);
+//            Child child3 = new Child("Igor", 9);
+//
+//            section.addChildToSection(child1);
+//            section.addChildToSection(child2);
+//            section.addChildToSection(child3);
 
             session.beginTransaction();
-            Section section = session.get(Section.class, 2);
-
-            System.out.println(section);
-            System.out.println(section.getChildren());
+            Child child = session.get(Child.class, 4);
+            session.remove(child);
 
             session.getTransaction().commit();
             System.out.println("Done!!!");
